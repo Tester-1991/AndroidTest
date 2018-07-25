@@ -25,7 +25,8 @@
             android:label="@string/title_activity_base"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".ui.activity.PermissionActivity" />
-        <activity android:name=".ui.activity.EasyPermissionActivity"></activity>
+        <activity android:name=".ui.activity.EasyPermissionActivity" />
+        <activity android:name=".ui.activity.RoundImageViewActivity" />
     </application>
 
 </manifest>
