@@ -2,6 +2,7 @@ package com.shiyan.app.ui.activity;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -9,8 +10,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.Xfermode;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Shader;
 import android.os.Bundle;
 import android.widget.ImageView;
 
@@ -29,15 +29,15 @@ public class RoundImageViewActivity extends BaseActivity {
 
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.time);
 
-        iv_photo.setImageBitmap( createCircleImage(bitmap));
+        iv_photo.setImageBitmap( createXfermodeRoundRectBitmap(bitmap,50));
     }
 
     /**
-     * 图片裁剪成圆角(利用RoundRect)
+     * 图片裁剪成圆角(利用RoundRect,Xfermode)
      * @param bitmap
      * @return
      */
-    private Bitmap createRoundRectBitmap(Bitmap bitmap,int roundPx){
+    private Bitmap createXfermodeRoundRectBitmap(Bitmap bitmap,int angle){
 
         try {
             Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
@@ -47,9 +47,7 @@ public class RoundImageViewActivity extends BaseActivity {
             final RectF rectF = new RectF(0, 0, bitmap.getWidth(),
                     bitmap.getHeight());
             paint.setAntiAlias(true);
-            canvas.drawARGB(0, 0, 0, 0);
-            paint.setColor(Color.BLACK);
-            canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
+            canvas.drawRoundRect(rectF, angle, angle, paint);
             paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
 
             final Rect rect = new Rect(0, 0, bitmap.getWidth(),
@@ -63,11 +61,15 @@ public class RoundImageViewActivity extends BaseActivity {
     }
 
     /**
-     * 图片裁剪成圆形
+     * 图片裁剪成圆形(利用RoundRect,Xfermode)
      * @param bitmap
      * @return
      */
-    private Bitmap createCircleImage(Bitmap bitmap){
+    private Bitmap createXfermodeCircleBitmap(Bitmap bitmap){
+
+        int radius = Math.min(bitmap.getWidth() / 2,bitmap.getHeight() /2 );
+
+        bitmap = Bitmap.createScaledBitmap(bitmap,2 * radius,2 * radius,true);
 
         Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),bitmap.getHeight(), Bitmap.Config.ARGB_8888);
 
@@ -78,7 +80,7 @@ public class RoundImageViewActivity extends BaseActivity {
         paint.setFilterBitmap(true);
 
         //绘制圆形
-        canvas.drawCircle(output.getWidth() / 2,output.getHeight() / 2,output.getHeight() / 2,paint);
+        canvas.drawCircle(radius,radius,radius,paint);
 
         //使用SRC_IN
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
@@ -87,5 +89,23 @@ public class RoundImageViewActivity extends BaseActivity {
         canvas.drawBitmap(bitmap,0,0,paint);
 
         return output;
+    }
+
+    /**
+     * 图片裁剪成圆角(BitmapShader)
+     * @param bitmap
+     * @param angle
+     * @return
+     */
+    private Bitmap createBitmapShaderRoundRectBitmap(Bitmap bitmap,int angle){
+
+        Bitmap out = Bitmap.createBitmap(bitmap.getWidth(),bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+
+        BitmapShader bitmapShader = new BitmapShader(out, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+
+//        float scale = Math.max(getwi)
+
+        return  null;
+
     }
 }
