@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
-import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
@@ -29,7 +29,7 @@ public class RoundImageViewActivity extends BaseActivity {
 
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.time);
 
-        iv_photo.setImageBitmap( createXfermodeRoundRectBitmap(bitmap,50));
+        iv_photo.setImageBitmap( createBitmapShaderRoundRectBitmap(bitmap,50,600,600));
     }
 
     /**
@@ -97,15 +97,61 @@ public class RoundImageViewActivity extends BaseActivity {
      * @param angle
      * @return
      */
-    private Bitmap createBitmapShaderRoundRectBitmap(Bitmap bitmap,int angle){
+    private Bitmap createBitmapShaderRoundRectBitmap(Bitmap bitmap,int angle,int width,int height){
 
-        Bitmap out = Bitmap.createBitmap(bitmap.getWidth(),bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+        Bitmap out = Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);
 
-        BitmapShader bitmapShader = new BitmapShader(out, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+        BitmapShader bitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
 
-//        float scale = Math.max(getwi)
+        float scale = Math.max(width * 1.0f / out.getWidth(),height * 1.0f / out.getHeight());
 
-        return  null;
+        Matrix matrix = new Matrix();
+        matrix.setScale(scale,scale);
+        //设置变换矩阵
+        bitmapShader.setLocalMatrix(matrix);
+
+        Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        paint.setShader(bitmapShader);
+
+        Canvas canvas = new Canvas(out);
+        RectF rectF = new RectF(0,0,width,height);
+        canvas.drawRoundRect(rectF,angle,angle,paint);
+
+        return  out;
+
+    }
+
+
+    /**
+     * 图片裁剪成圆(BitmapShader)
+     * @param bitmap
+     * @return
+     */
+    private Bitmap createBitmapShaderCircleBitmap(Bitmap bitmap,int radius){
+
+        int width = radius * 2;
+        int height = radius * 2;
+
+        Bitmap out = Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);
+
+        BitmapShader bitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+
+        float scale = width * 1.0f / Math.min(out.getWidth(),out.getHeight());
+
+        Matrix matrix = new Matrix();
+        matrix.setScale(scale,scale);
+        //设置变换矩阵
+        bitmapShader.setLocalMatrix(matrix);
+
+        Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        paint.setShader(bitmapShader);
+
+        Canvas canvas = new Canvas(out);
+        canvas.drawCircle(width * 1.0f / 2 ,width * 1.0f / 2, width * 1.0f / 2,paint);
+
+        return  out;
 
     }
 }
