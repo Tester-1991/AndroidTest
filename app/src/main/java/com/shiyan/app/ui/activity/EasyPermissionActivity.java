@@ -90,6 +90,7 @@ public class EasyPermissionActivity extends BaseActivity implements EasyPermissi
     @AfterPermissionGranted(0)
     public void initData(){
        ToastUtils.showShort("授权成功,业务逻辑处理");
+        startActivity(new Intent(this,GlideActivity.class));
     }
 
     @Override

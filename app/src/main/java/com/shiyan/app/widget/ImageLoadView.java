@@ -54,18 +54,7 @@ public class ImageLoadView extends ImageView {
         CustomImageSizeModel customImageSizeModel = new CustomImageSizeModel(url);
 
         Glide.with(getContext().getApplicationContext())
-                .load(customImageSizeModel).listener(new RequestListener<Drawable>() {
-            @Override
-            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                Log.e("onLoadFailed",e.getMessage());
-                return true;
-            }
-
-            @Override
-            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                return true;
-            }
-        })
+                .load(customImageSizeModel)
                 .into(this);
     }
 

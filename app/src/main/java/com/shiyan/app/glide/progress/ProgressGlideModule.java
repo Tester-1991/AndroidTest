@@ -17,7 +17,7 @@ import okhttp3.OkHttpClient;
 /**
  * 作者: created by shiyan on 2018/8/3
  **/
-@GlideModule
+//@GlideModule
 public class ProgressGlideModule extends LibraryGlideModule{
 
     @Override

@@ -39,7 +39,7 @@ public class GlideActivity extends BaseActivity {
 
 //        iv_one.setIconProgressImage(bookUrl);
 
-//        GlideUtil.downloadImage(this,bookUrl);
+        GlideUtil.downloadImage(this,bookUrl);
 
         iv_one.setIconImage(bookUrl);
     }
