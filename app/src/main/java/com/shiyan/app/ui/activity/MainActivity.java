@@ -4,14 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
-import android.widget.ImageView;
 
-import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.shiyan.app.R;
-
-import pub.devrel.easypermissions.EasyPermissions;
-import pub.devrel.easypermissions.PermissionRequest;
 
 public class MainActivity extends BaseActivity {
 
