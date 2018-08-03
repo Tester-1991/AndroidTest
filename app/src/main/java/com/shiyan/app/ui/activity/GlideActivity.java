@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 import com.blankj.utilcode.util.ActivityUtils;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
@@ -42,6 +43,7 @@ public class GlideActivity extends BaseActivity {
         GlideUtil.downloadImage(this,bookUrl);
 
         iv_one.setIconImage(bookUrl);
+
     }
 
 }

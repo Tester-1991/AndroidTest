@@ -18,9 +18,10 @@ public class GlideUtil {
 
     /**
      * 清理内存缓存
+     *
      * @param context
      */
-    public static void clearMemory(Context context){
+    public static void clearMemory(Context context) {
 
         // This method must be called on the main thread.
         Glide.get(context).clearMemory();
@@ -29,11 +30,12 @@ public class GlideUtil {
 
     /**
      * 清理磁盘缓存
+     *
      * @param context
      */
-    public static void clearDiskCache(Context context){
+    public static void clearDiskCache(Context context) {
 
-        new AsyncTask<Void,Void,Void>(){
+        new AsyncTask<Void, Void, Void>() {
 
             @Override
             protected Void doInBackground(Void... voids) {
@@ -44,14 +46,21 @@ public class GlideUtil {
 
     }
 
-    public static void downloadImage(Context context,String url){
+    /**
+     * 下载文件
+     *
+     * @param context
+     * @param url
+     */
+    public static void downloadImage(Context context, String url) {
         new Thread(new Runnable() {
-        FutureTarget<File> target = Glide.with(context).asFile().load(url).submit();
+            FutureTarget<File> target = Glide.with(context).asFile().load(url).submit();
+
             @Override
             public void run() {
                 try {
                     File file = target.get();
-                    LogUtils.e("file",file.getAbsolutePath() + "");
+                    LogUtils.e("file", file.getAbsolutePath() + "");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (ExecutionException e) {
