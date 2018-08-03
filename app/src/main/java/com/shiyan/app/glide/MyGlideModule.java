@@ -1,18 +1,10 @@
 package com.shiyan.app.glide;
 
-import android.Manifest;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.os.Environment;
-import android.os.Handler;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
-import com.blankj.utilcode.util.ActivityUtils;
-import com.blankj.utilcode.util.LogUtils;
-import com.blankj.utilcode.util.ToastUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.GlideBuilder;
 import com.bumptech.glide.Priority;
@@ -27,14 +19,9 @@ import com.bumptech.glide.load.engine.cache.LruResourceCache;
 import com.bumptech.glide.module.AppGlideModule;
 import com.bumptech.glide.request.RequestOptions;
 import com.shiyan.app.R;
-import com.shiyan.app.ui.activity.PermissionActivity;
 import com.shiyan.app.util.AppUtil;
 
-import java.io.File;
 import java.io.InputStream;
-
-import pub.devrel.easypermissions.EasyPermissions;
-import pub.devrel.easypermissions.PermissionRequest;
 
 /**
  * 作者: created by shiyan on 2018/8/1
