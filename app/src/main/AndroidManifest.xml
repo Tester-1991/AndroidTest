@@ -3,6 +3,8 @@
     package="com.shiyan.app">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".ui.activity.MyApplication"
@@ -27,6 +29,7 @@
         <activity android:name=".ui.activity.PermissionActivity" />
         <activity android:name=".ui.activity.EasyPermissionActivity" />
         <activity android:name=".ui.activity.RoundImageViewActivity" />
+        <activity android:name=".ui.activity.GlideActivity" />
     </application>
 
 </manifest>

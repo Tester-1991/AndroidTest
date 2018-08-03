@@ -12,22 +12,6 @@ import android.graphics.drawable.Drawable;
 public class ImageUtil {
 
     /**
-     * 单例模式 构造方法私有化
-     */
-    private ImageUtil() {
-    }
-
-    public static ImageUtil getInstance(){
-        return ImageUtilHolder.instance;
-    }
-
-    private static class ImageUtilHolder{
-
-        private static final ImageUtil instance = new ImageUtil();
-
-    }
-
-    /**
      * drawable转bitmap
      * @param drawable
      * @return
