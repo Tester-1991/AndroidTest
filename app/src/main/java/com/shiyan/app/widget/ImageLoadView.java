@@ -10,29 +10,23 @@ import android.util.Log;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.DataSource;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.DrawableImageViewTarget;
 import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
-import com.shiyan.app.R;
 import com.shiyan.app.glide.CircleTransformation;
 import com.shiyan.app.glide.CustomImageSizeModel;
 import com.shiyan.app.glide.progress.ProgressInterceptor;
 import com.shiyan.app.glide.progress.ProgressListener;
 
 import jp.wasabeef.glide.transformations.BlurTransformation;
-import jp.wasabeef.glide.transformations.CropCircleTransformation;
-import jp.wasabeef.glide.transformations.CropTransformation;
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
-import static com.shiyan.app.glide.GlideOptions.bitmapTransform;
+import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
 
 /**
  * 作者: created by shiyan on 2018/8/1
