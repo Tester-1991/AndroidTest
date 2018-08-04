@@ -3,6 +3,7 @@ package com.shiyan.app.ui.activity;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -13,8 +14,12 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.blankj.utilcode.util.ToastUtils;
+import com.bumptech.glide.load.engine.cache.DiskCache;
+import com.bumptech.glide.load.engine.cache.DiskLruCacheWrapper;
 import com.shiyan.app.R;
+import com.shiyan.app.glide.MyGlideModule;
 
+import java.io.File;
 import java.util.List;
 
 import pub.devrel.easypermissions.AfterPermissionGranted;
@@ -90,6 +95,7 @@ public class EasyPermissionActivity extends BaseActivity implements EasyPermissi
     @AfterPermissionGranted(0)
     public void initData(){
        ToastUtils.showShort("授权成功,业务逻辑处理");
+        startActivity(new Intent(this,GlideActivity.class));
     }
 
     @Override
