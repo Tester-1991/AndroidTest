@@ -31,6 +31,8 @@ android {
 }
 
 dependencies {
+    def lifecycle_version = "1.1.1"
+
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
@@ -52,5 +54,11 @@ dependencies {
     implementation 'jp.wasabeef:glide-transformations:3.3.0'
     //glide Okhttp3
     implementation "com.github.bumptech.glide:okhttp3-integration:4.7.1"
+
+    //lifecycle
+    implementation "android.arch.lifecycle:common-java8:$lifecycle_version"
+
+    //banner
+    implementation 'com.youth.banner:banner:1.4.10'
 
 }
