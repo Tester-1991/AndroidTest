@@ -10,13 +10,9 @@ import android.util.Log;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.DataSource;
-import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
-import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.DrawableImageViewTarget;
-import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.shiyan.app.glide.CircleTransformation;
 import com.shiyan.app.glide.CustomImageSizeModel;
@@ -50,7 +46,10 @@ public class ImageLoadView extends ImageView {
         setScaleType(ScaleType.FIT_XY);
     }
 
-
+    /**
+     * 加载普通图片
+     * @param url
+     */
     public void setIconImage(String url){
 
         CustomImageSizeModel customImageSizeModel = new CustomImageSizeModel(url);
@@ -60,6 +59,10 @@ public class ImageLoadView extends ImageView {
                 .into(this);
     }
 
+    /**
+     * 加载图片带进度
+     * @param url
+     */
     public void setIconProgressImage(String url){
 
         ProgressInterceptor.addListener(url, new ProgressListener() {
@@ -90,6 +93,10 @@ public class ImageLoadView extends ImageView {
                 });
     }
 
+    /**
+     * 加载圆形图片
+     * @param url
+     */
     public void setCircleImage(String url){
 
         CustomImageSizeModel customImageSizeModel = new CustomImageSizeModel(url);
@@ -100,6 +107,11 @@ public class ImageLoadView extends ImageView {
                 .into(this);
     }
 
+    /**
+     * 加载圆形图片(图片裁剪位置可以是top,bottom)
+     * @param url
+     * @param cropType
+     */
     public void setCircleCropImage(String url,CircleTransformation.CropType cropType){
 
         CustomImageSizeModel customImageSizeModel = new CustomImageSizeModel(url);
@@ -110,6 +122,10 @@ public class ImageLoadView extends ImageView {
                 .into(this);
     }
 
+    /**
+     * 加载圆角图片
+     * @param url
+     */
     public void setRoundImage(String url){
 
         CustomImageSizeModel customImageSizeModel = new CustomImageSizeModel(url);
@@ -120,6 +136,10 @@ public class ImageLoadView extends ImageView {
                 .into(this);
     }
 
+    /**
+     * blur处理
+     * @param url
+     */
     public void setBlurImage(String url){
 
         CustomImageSizeModel customImageSizeModel = new CustomImageSizeModel(url);

@@ -49,14 +49,9 @@ public class MyGlideModule extends AppGlideModule {
 
     private static final int MAX_CACHE_SIZE = 100 * 1024 * 1024;
 
-    public static GlideBuilder builder;
-
-
     //修改Glide配置
     @Override
     public void applyOptions(@NonNull Context context, @NonNull GlideBuilder builder) {
-
-        this.builder = builder;
 
         long availableCount = AppUtil.getAvailableMemory(context);
 

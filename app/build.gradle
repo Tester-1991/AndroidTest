@@ -31,6 +31,8 @@ android {
 }
 
 dependencies {
+    def lifecycle_version = "1.1.1"
+
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
@@ -55,4 +57,11 @@ dependencies {
 
     //recyclerview helper
     implementation "cc.solart:turbo-recyclerview-helper:1.2.1"
+
+    //lifecycle
+    implementation "android.arch.lifecycle:common-java8:$lifecycle_version"
+
+    //banner
+    implementation 'com.youth.banner:banner:1.4.10'
+
 }

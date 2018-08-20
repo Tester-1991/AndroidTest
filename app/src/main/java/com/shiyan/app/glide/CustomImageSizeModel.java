@@ -1,9 +1,7 @@
 package com.shiyan.app.glide;
 
-import android.util.Log;
-
 /**
- * Created by yuqihui on 2016/12/9.
+ * Created by shiyan on 2018/8/4.
  */
 
 public class CustomImageSizeModel {
@@ -15,6 +13,7 @@ public class CustomImageSizeModel {
     }
 
     public String requestCustomSizeUrl(int width, int height){
+        // TODO: 2018/8/4 对图片url进行处理 
         return this.baseImgUrl;
     }
 

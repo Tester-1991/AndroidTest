@@ -17,6 +17,9 @@ import java.util.List;
 
 import static android.support.v7.widget.RecyclerView.SCROLL_STATE_IDLE;
 
+/**
+ * 列表视频自动播放
+ */
 public class VideoAutoPlayActivity extends BaseActivity {
 
     private RecyclerView recyclerView;
@@ -41,6 +44,8 @@ public class VideoAutoPlayActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_auto_play);
+
+        PlayerManager.getInstance().setLifecycle(getLifecycle());
 
         recyclerView = findViewById(R.id.recyclerView);
 
@@ -67,8 +72,6 @@ public class VideoAutoPlayActivity extends BaseActivity {
                 }
             }
         });
-
-
 
     }
 

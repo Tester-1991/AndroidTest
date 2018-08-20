@@ -1,7 +1,11 @@
 package com.shiyan.app.util;
 
+import android.arch.lifecycle.DefaultLifecycleObserver;
+import android.arch.lifecycle.Lifecycle;
+import android.arch.lifecycle.LifecycleOwner;
 import android.graphics.SurfaceTexture;
 import android.media.MediaPlayer;
+import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.Surface;
 
@@ -12,7 +16,7 @@ import com.shiyan.app.view.item.VideoAutoPlayItemView;
  * 作者: created by shiyan on 2018/8/20
  **/
 
-public class PlayerManager {
+public class PlayerManager implements DefaultLifecycleObserver{
 
     private int position = -1;
 
@@ -114,6 +118,14 @@ public class PlayerManager {
         return position;
     }
 
+    /**
+     * 设置生命周期回调
+     * @param lifecycle
+     */
+    public void setLifecycle(Lifecycle lifecycle) {
+        lifecycle.addObserver(this);
+    }
+
     //------------------------------listener-------------------------------
     MediaPlayer.OnPreparedListener onPreparedListener = new MediaPlayer.OnPreparedListener() {
         @Override
@@ -133,4 +145,22 @@ public class PlayerManager {
     };
 
     //------------------------------listener-------------------------------
+
+    //--------------------------------生命周期--------------------------------
+
+
+    @Override
+    public void onResume(@NonNull LifecycleOwner owner) {
+
+        if(videoAutoPlayItemView == null) return;
+
+        videoAutoPlayItemView.autoPlayVideo();
+    }
+
+    @Override
+    public void onStop(@NonNull LifecycleOwner owner) {
+        stop();
+    }
+
+    //--------------------------------生命周期--------------------------------
 }
