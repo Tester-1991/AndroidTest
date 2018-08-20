@@ -74,8 +74,6 @@ public class PlayerManager {
 
         mediaPlayer.setDataSource(videoUrl);
 
-        mediaPlayer.setLooping(true);
-
         mediaPlayer.setScreenOnWhilePlaying(true);
 
         mediaPlayer.setOnPreparedListener(onPreparedListener);
