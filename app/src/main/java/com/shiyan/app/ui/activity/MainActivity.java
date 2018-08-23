@@ -10,6 +10,8 @@ import com.shiyan.app.R;
 
 public class MainActivity extends BaseActivity {
 
+    private long currentTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,9 +20,6 @@ public class MainActivity extends BaseActivity {
         startActivity(new Intent(this,VideoAutoPlayActivity.class));
         finish();
     }
-
-
-    private long currentTime;
 
     /**
      * 双击回退(2秒钟)
@@ -47,8 +46,6 @@ public class MainActivity extends BaseActivity {
                     return true;
             }
         }
-
-
         return super.dispatchKeyEvent(event);
     }
 }
