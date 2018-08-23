@@ -61,4 +61,7 @@ dependencies {
     //banner
     implementation 'com.youth.banner:banner:1.4.10'
 
+    //viewanimator
+    implementation 'com.github.florent37:viewanimator:1.0.5'
+
 }

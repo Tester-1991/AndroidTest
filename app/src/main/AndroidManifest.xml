@@ -32,7 +32,8 @@
         <activity android:name=".ui.activity.RoundImageViewActivity" />
         <activity android:name=".ui.activity.GlideActivity" />
         <activity android:name=".ui.activity.LifeCycleActivity" />
-        <activity android:name=".ui.activity.BannerActivity"></activity>
+        <activity android:name=".ui.activity.BannerActivity" />
+        <activity android:name=".ui.activity.AnimationActivity"></activity>
     </application>
 
 </manifest>

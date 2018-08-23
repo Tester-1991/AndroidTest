@@ -23,18 +23,8 @@ public class BannerActivity extends BaseActivity implements OnBannerListener {
         setContentView(R.layout.activity_banner);
 
         banner = findViewById(R.id.banner);
-        try {
-            Field privateIntField = Banner.class.getDeclaredField("mIndicatorWidth");
-            privateIntField.setAccessible(true);
-            privateIntField.set(banner, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-
+        updateWidth();
 
         String[] urls = getResources().getStringArray(R.array.url);
 
@@ -50,6 +40,18 @@ public class BannerActivity extends BaseActivity implements OnBannerListener {
 
         banner.start();
 
+    }
+
+    private void updateWidth() {
+        try {
+            Field privateIntField = Banner.class.getDeclaredField("mIndicatorWidth");
+            privateIntField.setAccessible(true);
+            privateIntField.set(banner, LinearLayout.LayoutParams.WRAP_CONTENT);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
