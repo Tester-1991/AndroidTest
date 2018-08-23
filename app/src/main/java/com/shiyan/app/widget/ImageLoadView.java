@@ -42,6 +42,8 @@ public class ImageLoadView extends ImageView {
 
     public ImageLoadView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+
+        setScaleType(ScaleType.FIT_XY);
     }
 
     /**

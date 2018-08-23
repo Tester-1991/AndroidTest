@@ -31,6 +31,7 @@
         <activity android:name=".ui.activity.EasyPermissionActivity" />
         <activity android:name=".ui.activity.RoundImageViewActivity" />
         <activity android:name=".ui.activity.GlideActivity" />
+        <activity android:name=".ui.activity.VideoAutoPlayActivity"></activity>
         <activity android:name=".ui.activity.LifeCycleActivity" />
         <activity android:name=".ui.activity.BannerActivity" />
         <activity android:name=".ui.activity.AnimationActivity"></activity>

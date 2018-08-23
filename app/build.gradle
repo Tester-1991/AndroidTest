@@ -55,6 +55,9 @@ dependencies {
     //glide Okhttp3
     implementation "com.github.bumptech.glide:okhttp3-integration:4.7.1"
 
+    //recyclerview helper
+    implementation "cc.solart:turbo-recyclerview-helper:1.2.1"
+
     //lifecycle
     implementation "android.arch.lifecycle:common-java8:$lifecycle_version"
 
