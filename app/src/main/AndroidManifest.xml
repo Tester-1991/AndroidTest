@@ -35,6 +35,7 @@
         <activity android:name=".ui.activity.LifeCycleActivity" />
         <activity android:name=".ui.activity.BannerActivity" />
         <activity android:name=".ui.activity.TopToBottomFinishActivity" android:theme="@style/MyTheme"></activity>
+        <activity android:name=".ui.activity.AnimationActivity"></activity>
     </application>
 
 </manifest>

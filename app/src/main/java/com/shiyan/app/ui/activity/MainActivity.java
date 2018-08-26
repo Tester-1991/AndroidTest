@@ -10,17 +10,15 @@ import com.shiyan.app.R;
 
 public class MainActivity extends BaseActivity {
 
+    private long currentTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         startActivity(new Intent(this,TopToBottomFinishActivity.class));
     }
-
-
-    private long currentTime;
 
     /**
      * 双击回退(2秒钟)
@@ -47,8 +45,6 @@ public class MainActivity extends BaseActivity {
                     return true;
             }
         }
-
-
         return super.dispatchKeyEvent(event);
     }
 }
