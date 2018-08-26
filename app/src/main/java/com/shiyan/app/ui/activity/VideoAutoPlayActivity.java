@@ -134,6 +134,8 @@ public class VideoAutoPlayActivity extends BaseActivity {
 
                     totalItemCount = linearManager.getItemCount();
 
+
+
                     autoPlayVideo(recyclerView);
                     break;
             }
@@ -157,7 +159,6 @@ public class VideoAutoPlayActivity extends BaseActivity {
 
                 PlayerManager.getInstance().stop();
             }
-
         }
 
     };
