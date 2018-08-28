@@ -34,8 +34,11 @@
         <activity android:name=".ui.activity.VideoAutoPlayActivity" />
         <activity android:name=".ui.activity.LifeCycleActivity" />
         <activity android:name=".ui.activity.BannerActivity" />
-        <activity android:name=".ui.activity.TopToBottomFinishActivity" android:theme="@style/MyTheme"></activity>
-        <activity android:name=".ui.activity.AnimationActivity"></activity>
+        <activity
+            android:name=".ui.activity.TopToBottomFinishActivity"
+            android:theme="@style/MyTheme" />
+        <activity android:name=".ui.activity.AnimationActivity" />
+        <activity android:name=".ui.activity.ScrollerImageViewActivity" />
     </application>
 
 </manifest>
