@@ -8,6 +8,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
@@ -78,7 +79,8 @@ public class CommonTabLayoutActivity extends BaseActivity {
         Reflect.on(commonTabLayout).set("mIndicatorHeight",resolution.px2dp2pxHeight(5));
         commonTabLayout.setTextSelectColor(Color.rgb(50,50,50));
         commonTabLayout.setTextUnselectColor(Color.rgb(161,161,161));
-        commonTabLayout.setTextBold(2);
+        commonTabLayout.setTextBold(Reflect.on(commonTabLayout).get("TEXT_BOLD_BOTH"));
+        LogUtils.eTag("bold:" + Reflect.on(commonTabLayout).get("TEXT_BOLD_BOTH"));
 //        commonTabLayout.setTabPaddingFre(resolution.px2dp2pxWidth(25));
         Reflect.on(commonTabLayout).set("mTabPadding",resolution.px2dp2pxWidth(25));
         int childCount = commonTabLayout.getChildCount();
