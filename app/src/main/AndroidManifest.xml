@@ -39,7 +39,8 @@
             android:theme="@style/MyTheme" />
         <activity android:name=".ui.activity.AnimationActivity" />
         <activity android:name=".ui.activity.ScrollerImageViewActivity" />
-        <activity android:name=".ui.activity.ScrollerPictureActivity"></activity>
+        <activity android:name=".ui.activity.ScrollerPictureActivity" />
+        <activity android:name=".ui.activity.CommonTabLayoutActivity"></activity>
     </application>
 
 </manifest>
