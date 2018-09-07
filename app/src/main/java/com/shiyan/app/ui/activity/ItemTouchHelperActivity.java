@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.shiyan.app.R;
 
 import java.util.ArrayList;
@@ -38,6 +39,8 @@ public class ItemTouchHelperActivity extends AppCompatActivity {
         //调用ItemTouchHelper的attachToRecyclerView方法建立联系
         touchHelper.attachToRecyclerView(mRecyclerView);
         mRecyclerView.setAdapter(mAdapter);
+
+        LogUtils.eTag("ItemTouchHelperActivity",mRecyclerView.getChildCount() + "");
     }
 
     protected void initData()

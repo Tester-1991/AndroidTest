@@ -68,4 +68,10 @@ dependencies {
     //viewanimator
     implementation 'com.github.florent37:viewanimator:1.0.5'
 
+    //FlycoTabLayout
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+
+    //joor
+    implementation group: 'org.jooq', name: 'joor', version: '0.9.6'
+
 }

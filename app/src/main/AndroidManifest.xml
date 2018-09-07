@@ -40,7 +40,11 @@
         <activity android:name=".ui.activity.AnimationActivity" />
         <activity android:name=".ui.activity.ScrollerImageViewActivity" />
         <activity android:name=".ui.activity.ScrollerPictureActivity" />
-        <activity android:name=".ui.activity.BottomTabActivity" android:configChanges="screenSize|orientation|keyboard"></activity>
+        <activity
+            android:name=".ui.activity.BottomTabActivity"
+            android:configChanges="screenSize|orientation|keyboard" />
+        <activity android:name=".ui.activity.CommonTabLayoutActivity" />
+        <activity android:name=".ui.activity.LrcActivity"></activity>
     </application>
 
 </manifest>
