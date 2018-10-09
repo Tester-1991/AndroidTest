@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource>
+
+    <external-cache-path
+        name = "test"
+        path = "apk/"
+        />
+
+</resource>

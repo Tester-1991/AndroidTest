@@ -47,12 +47,12 @@ public class LrcActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lrc);
 
-        String lrcMessage = LrcUtil.getLrcText(this, "test.lrc");
+        String lrcMessage = LrcUtil.getLrcText(this, "test2.lrc");
 
         textView = findViewById(R.id.tv_message);
 
-//        textView.setText(lrcMessage);
-//
+        textView.setText(lrcMessage);
+
         datas = LrcEntity.parseLrc(lrcMessage);
 
         handler.sendEmptyMessageDelayed(1,1000);

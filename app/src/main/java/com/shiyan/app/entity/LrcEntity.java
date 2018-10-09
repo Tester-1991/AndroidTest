@@ -21,6 +21,8 @@ public class LrcEntity implements Comparable<LrcEntity>{
 
     private String text;
 
+    private static List<LrcEntity> entityList = new ArrayList<>();
+
     public LrcEntity() {
     }
 
@@ -64,7 +66,8 @@ public class LrcEntity implements Comparable<LrcEntity>{
             return null;
         }
 
-        List<LrcEntity> entityList = new ArrayList<>();
+        entityList.clear();
+
         // 将字符串以换行符切割
         String[] array = lrcText.split("\\n");
         for (String line : array) {
@@ -156,6 +159,33 @@ public class LrcEntity implements Comparable<LrcEntity>{
     private static int getCount(String line) {
         String[] split = line.split("\\]");
         return split.length;
+    }
+
+    /**
+     * seek歌词
+     * @param position
+     * @return
+     */
+    private static String seekTo(long position){
+
+        String result = "";
+
+        if(position < 0) return result;
+
+        if(entityList.size() > 0) {
+            for(int i = 0; i < entityList.size(); i++){
+
+                if((i + 1) <= entityList.size() -1) {
+                    if (entityList.get(i).getTimeLong() >= position && entityList.get(i + 1).getTimeLong() < position) {
+                        return entityList.get(i).getText();
+                    }
+                }else if(i == entityList.size() -1){
+                    return entityList.get(i).getText();
+                }
+            }
+        }
+
+        return result;
     }
 
     @Override
