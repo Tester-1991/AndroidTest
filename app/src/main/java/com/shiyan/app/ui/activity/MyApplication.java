@@ -2,11 +2,13 @@ package com.shiyan.app.ui.activity;
 
 import android.app.Application;
 
-import com.blankj.utilcode.util.ActivityUtils;
+import com.facebook.stetho.Stetho;
 import com.liulishuo.filedownloader.FileDownloader;
 import com.liulishuo.filedownloader.connection.FileDownloadUrlConnection;
-
-import org.xutils.x;
+import com.raizlabs.android.dbflow.config.DatabaseConfig;
+import com.raizlabs.android.dbflow.config.FlowConfig;
+import com.raizlabs.android.dbflow.config.FlowManager;
+import com.shiyan.app.dbflow.AppDatabase;
 
 
 public class MyApplication extends Application{
@@ -15,10 +17,18 @@ public class MyApplication extends Application{
     public void onCreate() {
         super.onCreate();
 
-        x.Ext.init(this);
-
         //初始化filedownloader
         initFileDownLoader();
+
+        //初始化DBFlow
+        FlowManager.init(FlowConfig.builder(this)
+                .addDatabaseConfig(DatabaseConfig.builder(AppDatabase.class)
+                        .databaseName(AppDatabase.NAME)
+                        .build())
+                .build());
+
+        //初始化Stetho
+        Stetho.initializeWithDefaults(this);
 
     }
 
