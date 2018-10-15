@@ -14,24 +14,24 @@ public class AppDatabase {
 
     public static final String NAME = "AppDatabase";
 
-    public static final int VERSION = 4;
+    public static final int VERSION = 1;
 
 
     /**
      * 数据库升级迁移
      */
-    @Migration(version = AppDatabase.VERSION,database = AppDatabase.class)
-    public static class AddEmailToUserMigration extends AlterTableMigration<UserData>{
-
-        public AddEmailToUserMigration(Class<UserData> table) {
-            super(table);
-        }
-
-        @Override
-        public void onPreMigrate() {
-            super.onPreMigrate();
-
-//            addColumn(SQLiteType.TEXT,"email");
-        }
-    }
+//    @Migration(version = AppDatabase.VERSION,database = AppDatabase.class)
+//    public static class AddEmailToUserMigration extends AlterTableMigration<UserData>{
+//
+//        public AddEmailToUserMigration(Class<UserData> table) {
+//            super(table);
+//        }
+//
+//        @Override
+//        public void onPreMigrate() {
+//            super.onPreMigrate();
+//
+////            addColumn(SQLiteType.TEXT,"email");
+//        }
+//    }
 }

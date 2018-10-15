@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.activity.DBFlowActivity">
+<Button
+    android:id="@+id/btn_add"
+    android:text="添加数据"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/btn_toast"
+        android:text="Toast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
