@@ -2,6 +2,8 @@ package com.shiyan.app.ui.activity;
 
 import android.app.Application;
 
+import com.baidu.mobstat.StatService;
+import com.blankj.utilcode.util.LogUtils;
 import com.facebook.stetho.Stetho;
 import com.liulishuo.filedownloader.FileDownloader;
 import com.liulishuo.filedownloader.connection.FileDownloadUrlConnection;
@@ -29,6 +31,12 @@ public class MyApplication extends Application{
 
         //初始化Stetho
         Stetho.initializeWithDefaults(this);
+
+        StatService.autoTrace(this);
+
+        String testDeviceId = StatService.getTestDeviceId(this);
+
+        LogUtils.eTag("testDeviceId",testDeviceId);
 
     }
 

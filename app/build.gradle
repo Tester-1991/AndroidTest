@@ -86,4 +86,7 @@ dependencies {
 
     //stetho
     implementation 'com.facebook.stetho:stetho:1.5.0'
+
+    //OkGo
+    implementation 'com.lzy.net:okgo:3.0.4'
 }
