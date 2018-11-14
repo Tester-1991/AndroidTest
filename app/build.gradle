@@ -4,6 +4,7 @@ def dbflow_version = "4.2.4"
 
 android {
     compileSdkVersion 27
+
     defaultConfig {
         applicationId "com.shiyan.app"
         minSdkVersion 14
@@ -12,13 +13,69 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+    //解决aapt2签名打包出现的错误
+    aaptOptions{
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
+
+    //解决打包过程中出现的错误
+    flavorDimensions 'api'
+
+    productFlavors {
+        _test {}
+        qh360 {}
+        baidu {}
+        yingyongbao {}
+        wandj {}
+        xiaomi {}
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            if (variant.buildType.name == "release") {
+                outputFileName = "androidtest_${variant.productFlavors[0].name}_code_${variant.versionCode}_v${variant.versionName}_release.apk"
+            } else {
+                outputFileName = "androidtest_${variant.productFlavors[0].name}_code_${variant.versionCode}_v${variant.versionName}_debug.apk"
+            }
         }
     }
+
+    //签名配置
+    signingConfigs {
+        release {
+            keyAlias 'key'
+            keyPassword '11111111'
+            storeFile file('keystore')
+            storePassword '11111111'
+        }
+    }
+
+    //执行lint检查，有任何的错误或者警告提示，都会终止构建，我们可以将其关掉。
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            //可调式
+            debuggable false
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled false
+            // 移除无用的resource文件
+            shrinkResources false
+            //混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //签名配置
+            signingConfig signingConfigs.release
+        }
+    }
+
     buildToolsVersion '27.0.3'
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8

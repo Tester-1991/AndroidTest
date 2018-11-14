@@ -61,7 +61,7 @@
 
         <activity android:name=".ui.activity.TakePhotoActivity" />
         <activity android:name=".ui.activity.DBFlowActivity" />
-        <activity android:name=".ui.activity.OkGoActivity"></activity>
+        <activity android:name=".ui.activity.OkGoActivity" />
     </application>
 
 </manifest>

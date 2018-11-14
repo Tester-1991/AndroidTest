@@ -26,7 +26,7 @@ public class OkGoActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ok_go);
 
-        testOkGoDownLoad();
+        testGet();
     }
 
     public void testGet(){

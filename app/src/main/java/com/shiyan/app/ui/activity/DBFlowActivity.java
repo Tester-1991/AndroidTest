@@ -42,19 +42,9 @@ public class DBFlowActivity extends BaseActivity {
 
         btn_toast = findViewById(R.id.btn_toast);
 
-        btn_add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ManyToManyByQuery();
-            }
-        });
+        btn_add.setOnClickListener(v -> ManyToManyByQuery());
 
-        btn_toast.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ToastUtils.showShort("hello");
-            }
-        });
+        btn_toast.setOnClickListener(v -> ToastUtils.showShort("hello"));
     }
 
     private void ManyToManyByAdd() {
@@ -72,7 +62,7 @@ public class DBFlowActivity extends BaseActivity {
             News_Category news_category = new News_Category();
             news_category.setCategory(category);
             news_category.setNews(news);
-            news_category.save();
+            news_category.insert();
         }
     }
 

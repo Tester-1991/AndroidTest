@@ -99,7 +99,7 @@ public class TakePhotoActivity extends BaseActivity implements View.OnClickListe
         if(EasyPermissions.hasPermissions(TakePhotoActivity.this,photoManifests)){
              takeCamera();
         }else{
-            EasyPermissions.requestPermissions(TakePhotoActivity.this,"需要申请权限?",0,photoManifests);
+            EasyPermissions.requestPermissions(TakePhotoActivity.this,"需要申请权限?",100,photoManifests);
         }
     }
 
@@ -130,7 +130,7 @@ public class TakePhotoActivity extends BaseActivity implements View.OnClickListe
 
     @Override
     public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
-        if(perms.size() == photoManifests.length) {
+        if(requestCode == 100 && perms.size() == photoManifests.length) {
             cameraAction();
         }
     }
