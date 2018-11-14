@@ -1,0 +1,27 @@
+ext{
+
+    android = [
+            compileSdkVersion: 27,
+            buildToolsVersion: "27.0.3",
+            applicationId: "com.shiyan.app",
+            minSdkVersion: 14,
+            targetSdkVersion: 27,
+            versionCode: 1,
+            versionName: "1.0"
+    ]
+
+    dependVersion = [
+            support: "27.1.0",
+            dbflow : "4.2.4",
+            lifecycle: "1.1.1"
+    ]
+
+    dependencies = [
+            "support-v4"          : "com.android.support:support-v4:${dependVersion.support}",
+            "appcompat-v7"        : "com.android.support:appcompat-v7:${dependVersion.support}",
+            "design"              : "com.android.support:design:${dependVersion.support}",
+            "lifecycle"           : "android.arch.lifecycle:common-java8:${dependVersion.lifecycle}",
+            "recyclerview"        : "com.android.support:recyclerview-v7:${dependVersion.support}",
+    ]
+
+}
