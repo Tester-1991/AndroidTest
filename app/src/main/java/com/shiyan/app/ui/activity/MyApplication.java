@@ -2,6 +2,7 @@ package com.shiyan.app.ui.activity;
 
 import android.app.Application;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.facebook.stetho.Stetho;
 import com.liulishuo.filedownloader.FileDownloader;
 import com.liulishuo.filedownloader.connection.FileDownloadUrlConnection;
@@ -12,11 +13,14 @@ import com.lzy.okgo.cookie.CookieJarImpl;
 import com.lzy.okgo.cookie.store.SPCookieStore;
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.HttpHeaders;
+import com.meituan.android.walle.ChannelInfo;
+import com.meituan.android.walle.WalleChannelReader;
 import com.raizlabs.android.dbflow.config.DatabaseConfig;
 import com.raizlabs.android.dbflow.config.FlowConfig;
 import com.raizlabs.android.dbflow.config.FlowManager;
 import com.shiyan.app.dbflow.AppDatabase;
 
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -44,6 +48,10 @@ public class MyApplication extends Application {
 
         //初始化OkGo
         initOkGo();
+
+        String value = WalleChannelReader.get(getApplicationContext(), "channel");
+
+        ToastUtils.showShort(value);
 
     }
 

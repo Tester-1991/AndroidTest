@@ -7,6 +7,7 @@
     tools:context=".ui.activity.RippleActivity">
 
     <TextView
+        android:id="@+id/tv_one"
         android:layout_width="match_parent"
         android:gravity="center"
         android:textSize="20dp"

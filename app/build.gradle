@@ -22,24 +22,24 @@ android {
     //解决打包过程中出现的错误
     flavorDimensions 'api'
 
-    productFlavors {
-        _test {}
-        qh360 {}
-        baidu {}
-        yingyongbao {}
-        wandj {}
-        xiaomi {}
-    }
-
-    android.applicationVariants.all { variant ->
-        variant.outputs.all {
-            if (variant.buildType.name == "release") {
-                outputFileName = "androidtest_${variant.productFlavors[0].name}_code_${variant.versionCode}_v${variant.versionName}_release.apk"
-            } else {
-                outputFileName = "androidtest_${variant.productFlavors[0].name}_code_${variant.versionCode}_v${variant.versionName}_debug.apk"
-            }
-        }
-    }
+//    productFlavors {
+//        _test {}
+//        qh360 {}
+//        baidu {}
+//        yingyongbao {}
+//        wandj {}
+//        xiaomi {}
+//    }
+//
+//    android.applicationVariants.all { variant ->
+//        variant.outputs.all {
+//            if (variant.buildType.name == "release") {
+//                outputFileName = "androidtest_${variant.productFlavors[0].name}_code_${variant.versionCode}_v${variant.versionName}_release.apk"
+//            } else {
+//                outputFileName = "androidtest_${variant.productFlavors[0].name}_code_${variant.versionCode}_v${variant.versionName}_debug.apk"
+//            }
+//        }
+//    }
 
     //签名配置
     signingConfigs {
@@ -71,7 +71,7 @@ android {
             minifyEnabled false
             //Zipalign优化
             zipAlignEnabled false
-            // 移除无用的resource文件
+            //移除无用的resource文件
             shrinkResources false
             //混淆文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
