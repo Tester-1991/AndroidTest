@@ -23,24 +23,24 @@ android {
     //解决打包过程中出现的错误
     flavorDimensions 'api'
 
-//    productFlavors {
-//        _test {}
-//        qh360 {}
-//        baidu {}
-//        yingyongbao {}
-//        wandj {}
-//        xiaomi {}
-//    }
-//
-//    android.applicationVariants.all { variant ->
-//        variant.outputs.all {
-//            if (variant.buildType.name == "release") {
-//                outputFileName = "androidtest_${variant.productFlavors[0].name}_code_${variant.versionCode}_v${variant.versionName}_release.apk"
-//            } else {
-//                outputFileName = "androidtest_${variant.productFlavors[0].name}_code_${variant.versionCode}_v${variant.versionName}_debug.apk"
-//            }
-//        }
-//    }
+    productFlavors {
+        _test {}
+        qh360 {}
+        baidu {}
+        yingyongbao {}
+        wandj {}
+        xiaomi {}
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            if (variant.buildType.name == "release") {
+                outputFileName = "androidtest_${variant.productFlavors[0].name}_code_${variant.versionCode}_v${variant.versionName}_release.apk"
+            } else {
+                outputFileName = "androidtest_${variant.productFlavors[0].name}_code_${variant.versionCode}_v${variant.versionName}_debug.apk"
+            }
+        }
+    }
 
     //签名配置
     signingConfigs {
@@ -113,6 +113,7 @@ dependencies {
 
     //glide
     implementation 'com.github.bumptech.glide:glide:4.7.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
     //glide-transformations
     implementation 'jp.wasabeef:glide-transformations:3.3.0'
@@ -177,13 +178,13 @@ walle {
 }
 
 //腾讯多渠道打包
-channel{
+channel {
     //指定渠道文件
     channelFile = file(project.rootDir.getAbsolutePath() + File.separator + "channel.txt")
     //多渠道包的输出目录，默认为new File(project.buildDir,"channel")
-    baseOutputDir = new File(project.rootDir,"tencent_channel")
+    baseOutputDir = new File(project.rootDir, "tencent_channel")
     //多渠道包的命名规则，默认为：${appName}-${versionName}-${versionCode}-${flavorName}-${buildType}
-    apkNameFormat ='${appName}-${versionName}-${versionCode}-${flavorName}-${buildType}'
+    apkNameFormat = '${appName}-${versionName}-${versionCode}-${flavorName}-${buildType}'
     //快速模式：生成渠道包时不进行校验（速度可以提升10倍以上，默认为false）
     isFastMode = false
     //buildTime的时间格式，默认格式：yyyyMMdd-HHmmss

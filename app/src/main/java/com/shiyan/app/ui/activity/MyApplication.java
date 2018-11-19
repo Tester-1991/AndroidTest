@@ -49,9 +49,9 @@ public class MyApplication extends Application {
         //初始化OkGo
         initOkGo();
 
-        String value = WalleChannelReader.get(getApplicationContext(), "channel");
-
-        ToastUtils.showShort(value);
+//        String value = WalleChannelReader.get(getApplicationContext(), "channel");
+//
+//        ToastUtils.showShort(value);
 
     }
 

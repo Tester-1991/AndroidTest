@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.activity.CustomBehaviorActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/child"
+        android:text="Child"
+        app:layout_behavior="com.shiyan.app.widget.ChildBehavior"
+        android:layout_height="wrap_content" />
+
+    <com.shiyan.app.widget.DependencyView
+        android:text="Dependency"
+        android:id="@+id/dependency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</android.support.design.widget.CoordinatorLayout>

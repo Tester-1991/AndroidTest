@@ -17,7 +17,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startActivity(new Intent(this,RippleActivity.class));
+        startActivity(new Intent(this,CustomBehaviorActivity.class));
 
 
     }

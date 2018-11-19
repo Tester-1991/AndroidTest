@@ -62,7 +62,8 @@
         <activity android:name=".ui.activity.TakePhotoActivity" />
         <activity android:name=".ui.activity.DBFlowActivity" />
         <activity android:name=".ui.activity.OkGoActivity" />
-        <activity android:name=".ui.activity.RippleActivity"></activity>
+        <activity android:name=".ui.activity.RippleActivity" />
+        <activity android:name=".ui.activity.CustomBehaviorActivity"></activity>
     </application>
 
 </manifest>
