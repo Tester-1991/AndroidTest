@@ -63,7 +63,8 @@
         <activity android:name=".ui.activity.DBFlowActivity" />
         <activity android:name=".ui.activity.OkGoActivity" />
         <activity android:name=".ui.activity.RippleActivity" />
-        <activity android:name=".ui.activity.CustomBehaviorActivity"></activity>
+        <activity android:name=".ui.activity.CustomBehaviorActivity" />
+        <activity android:name=".ui.activity.CustomBehavior2Activity"></activity>
     </application>
 
 </manifest>
