@@ -1,10 +1,12 @@
 package com.shiyan.app.ui.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.shiyan.app.R;
 
+/**
+ * 自定义Behavior
+ */
 public class CustomBehavior2Activity extends BaseActivity {
 
     @Override

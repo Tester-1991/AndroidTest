@@ -5,6 +5,7 @@ import android.widget.TextView;
 
 import com.meituan.android.walle.WalleChannelReader;
 import com.shiyan.app.R;
+import com.shiyan.app.widget.ScrollerView;
 
 public class RippleActivity extends BaseActivity {
 

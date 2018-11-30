@@ -35,5 +35,10 @@ public class BaseActivity extends AppCompatActivity{
                     WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
+    public void test(){
+
+    }
+
+
 
 }
