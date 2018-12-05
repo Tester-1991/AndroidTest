@@ -17,11 +17,11 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startActivity(new Intent(this,CustomBehavior2Activity.class));
+        Intent intent = new Intent(this,RippleActivity.class);
 
+        startActivity(intent);
 
     }
-
 
     /**
      * 双击回退(2秒钟)

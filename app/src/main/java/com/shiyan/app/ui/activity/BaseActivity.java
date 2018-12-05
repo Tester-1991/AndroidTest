@@ -19,16 +19,4 @@ public class BaseActivity extends AppCompatActivity{
                     WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
-    public void test(){
-        ThreadLocal<String> threadLocal = new ThreadLocal(){
-            @Override
-            protected Object initialValue() {
-                return "1";
-            }
-        };
-
-        ToastUtils.showShort(threadLocal.get());
-    }
-
-
 }

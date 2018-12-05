@@ -64,7 +64,13 @@
         <activity android:name=".ui.activity.OkGoActivity" />
         <activity android:name=".ui.activity.RippleActivity" />
         <activity android:name=".ui.activity.CustomBehaviorActivity" />
-        <activity android:name=".ui.activity.CustomBehavior2Activity"></activity>
+        <activity android:name=".ui.activity.CustomBehavior2Activity" />
+        <activity
+            android:name=".ui.activity.CustomBehavior3Activity"
+            android:process=":behavior" />
+        <activity android:name=".ui.activity.view.ViewActivity" />
+        <activity android:name=".ui.activity.view.View2Activity" />
+        <activity android:name=".ui.activity.BroadCastReceiverActivity"></activity>
     </application>
 
 </manifest>

@@ -4,15 +4,11 @@ import android.os.Bundle;
 
 import com.shiyan.app.R;
 
-/**
- * 自定义Behavior
- */
-public class CustomBehaviorActivity extends BaseActivity {
+public class BroadCastReceiverActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_behavior);
-
+        setContentView(R.layout.activity_broad_cast_receiver);
     }
 }

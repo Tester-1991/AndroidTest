@@ -29,6 +29,16 @@ import okhttp3.OkHttpClient;
 
 public class MyApplication extends Application {
 
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
