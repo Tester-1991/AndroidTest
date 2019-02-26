@@ -19,6 +19,7 @@ import com.raizlabs.android.dbflow.config.DatabaseConfig;
 import com.raizlabs.android.dbflow.config.FlowConfig;
 import com.raizlabs.android.dbflow.config.FlowManager;
 import com.shiyan.app.dbflow.AppDatabase;
+import com.shiyan.app.manager.NetWorkManager;
 
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -62,6 +63,8 @@ public class MyApplication extends Application {
 //        String value = WalleChannelReader.get(getApplicationContext(), "channel");
 //
 //        ToastUtils.showShort(value);
+
+        NetWorkManager.getInstance().init(this);
 
     }
 
@@ -107,4 +110,5 @@ public class MyApplication extends Application {
                         .readTimeout(15 * 1000)))
                 .commit();
     }
+
 }
